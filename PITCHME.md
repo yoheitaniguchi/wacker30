@@ -13,7 +13,7 @@
 ### 機械学習 Google ColaboratoryでKaggleの課題チャレンジ
 
 <div>
-  ![画像](./img/top.jpg)
+  ![画像](img/top.jpg)
 </div>
 
 <br>
