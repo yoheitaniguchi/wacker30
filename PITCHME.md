@@ -160,6 +160,22 @@
 
 ---
 
+#### 決定木<hr>
+
+- 決定木（けっていぎ、英: decision tree）は、（リスクマネジメントなどの）決定理論の分野において、 決定を行う為のグラフであり、計画を立案して目標に到達するために用いられる。 決定木は、意志決定を助けることを目的として作られる。 決定木は木構造の特別な形である。
+
+![](img/Decision_tree_model_ja.png)
+
+---
+
+#### ランダムフォレスト<hr>
+
+- 決定木を弱学習器とする集団学習アルゴリズム
+- 弱学習器＝精度の高くない学習器
+- 集団（アンサンブル）学習：多数決などで最終的な予測を行うもの
+
+---
+
 #### MLP（多層パーセプトロン）<hr>
 
 ![](img/MLP.png)
@@ -189,22 +205,6 @@
 文字入力の候補を予測して出す
 
 ![](img/SimpleRNN01.jpg)
-
----
-
-#### 決定木<hr>
-
-- 決定木（けっていぎ、英: decision tree）は、（リスクマネジメントなどの）決定理論の分野において、 決定を行う為のグラフであり、計画を立案して目標に到達するために用いられる。 決定木は、意志決定を助けることを目的として作られる。 決定木は木構造の特別な形である。
-
-![](img/Decision_tree_model_ja.png)
-
----
-
-#### ランダムフォレスト<hr>
-
-- 決定木を弱学習器とする集団学習アルゴリズム
-- 弱学習器＝精度の高くない学習器
-- 集団（アンサンブル）学習：多数決などで最終的な予測を行うもの
 
 ---
 
@@ -251,109 +251,9 @@ https://www.kaggle.com/c/skoltech-cats-vs-dogs/data
 
 ---
 
-### Taitanic生存者予測 <hr>
+### ハンズオン:Taitanic生存者予測 <hr>
 
 - [Titanic: Machine Learning from Disaster](https://www.kaggle.com/c/titanic)
-
----
-
-## ハンズオン
-
----
-
-### CSV読込
-  - pandasとnmpyのLibraryの説明
-
----
-
-### CSVデータの中身の確認
-    ``` python
-    train.header
-
-    ```
-
----
-
-#### 列の説明
-
-- PassengerId – 乗客識別ユニークID
-- Survived – 生存フラグ（0=死亡、1=生存）
-- Pclass – チケットクラス
-  - 1 = 上層クラス（お金持ち）
-  - 2 = 中級クラス（一般階級）
-  - 3 = 下層クラス（労働階級）
-- Name – 乗客の名前
-- Sex – 性別（male=男性、female＝女性）
-- Age – 年齢
-- SibSp – タイタニックに同乗している兄弟/配偶者の数
-- parch – タイタニックに同乗している親/子供の数
-- ticket – チケット番号
-- fare – 料金
-- cabin – 客室番号
-- Embarked – 出港地（タイタニックへ乗った港）
-  - C = Cherbourg
-  - Q = Queenstown
-  - S = Southampton
-
----
-
-#### データ件数確認
-
-``` python
-test_shape = test.shape
-train_shape = train.shape
-print(test_shape)
-print(train_shape)
-```
-
----
-
-#### 各項目のデータ有無の件数
-
-``` python
-test.describe()
-train.describe()
-```
-
----
-
-#### データセットの欠損の確認
-
-``` python
-train.isnull().sum()
-```
-
----
-
-#### データセットの事前処理
-
-1. 欠損データを代理データに入れ替える
-  - 固定値
-  - 最頻値
-  - 平均・中央値
-
-1. 文字列カテゴリカルデータを数字へ変換
-
----
-
-#### 予測モデルを作る
-
-``` python
-# 「train」の目的変数と説明変数の値を取得
-target = train["Survived"].values
-features_one = train[["Pclass", "Sex", "Age", "Fare"]].values
-# 決定木の作成
-my_tree_one = tree.DecisionTreeClassifier()
-my_tree_one = my_tree_one.fit(features_one, target)
-# 「test」の説明変数の値を取得
-test_features = test[["Pclass", "Sex", "Age", "Fare"]].values
-# 「test」の説明変数を使って「my_tree_one」のモデルで予測
-my_prediction = my_tree_one.predict(test_features)
-```
-
---
-
-#### 結果データ件数確認
 
 ---
 
