@@ -239,6 +239,8 @@
 
 ## チュートリアル <hr>
 
+---
+
 ### Cats vs. Dogs <hr>
 
 https://www.kaggle.com/c/skoltech-cats-vs-dogs/data
