@@ -259,12 +259,12 @@ https://www.kaggle.com/c/skoltech-cats-vs-dogs/data
 
 ## ハンズオン
 
---
+---
 
 ### CSV読込
   - pandasとnmpyのLibraryの説明
 
---
+---
 
 ### CSVデータの中身の確認
     ``` python
@@ -272,7 +272,7 @@ https://www.kaggle.com/c/skoltech-cats-vs-dogs/data
 
     ```
 
---
+---
 
 #### 列の説明
 
@@ -295,7 +295,7 @@ https://www.kaggle.com/c/skoltech-cats-vs-dogs/data
   - Q = Queenstown
   - S = Southampton
 
---
+---
 
 #### データ件数確認
 
@@ -306,7 +306,7 @@ print(test_shape)
 print(train_shape)
 ```
 
---
+---
 
 #### 各項目のデータ有無の件数
 
@@ -315,7 +315,7 @@ test.describe()
 train.describe()
 ```
 
---
+---
 
 #### データセットの欠損の確認
 
@@ -323,7 +323,7 @@ train.describe()
 train.isnull().sum()
 ```
 
---
+---
 
 #### データセットの事前処理
 
@@ -334,7 +334,7 @@ train.isnull().sum()
 
 1. 文字列カテゴリカルデータを数字へ変換
 
---
+---
 
 #### 予測モデルを作る
 
